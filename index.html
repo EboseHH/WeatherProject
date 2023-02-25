@@ -5,12 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Project</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="p-4 text-center bg-gradient-to-r from-cyan-500 to-blue-500">
+    <h1 class="text-3xl my-2">Ebose's Weather Compare Dasboard</h1>
+    <h2 class="text-xl my-7">
+      Enter city names to compare their respective weather for today.
+    </h2>
+
     <form action="/" method="post">
-      <label for="cityInput">City Name:</label>
-      <input id="cityInput" type="text" name="cityName" value="" />
-      <button type="submit">Go</button>
+      <div class="flex justify-center items-center gap-5">
+        <label for="cityInput">Enter City 1:</label>
+        <input
+          id="cityInput"
+          type="text"
+          required
+          class="block p-1 text-black bg-transparent border border-white"
+          name="cityName"
+          value=""
+        />
+      </div>
+      <div class="my-4">
+        <button
+          class="border-sky-700 border bg-sky-500 hover:bg-black p-2 px-4 mx-2 rounded-lg text-white hover:text-white"
+          type="button"
+        >
+          Add a City
+        </button>
+        <button
+          class="border-black border bg-amber-100 hover:bg-black p-2 px-4 mx-2 rounded-lg text-black hover:text-amber-400"
+          type="submit"
+        >
+          Generate
+        </button>
+      </div>
     </form>
+    <script src="client.js"></script>
   </body>
 </html>

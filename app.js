@@ -11,16 +11,14 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 
   app.post("/", function (req, res) {
-    const query = req.body.cityName
-    const apiKey = "";
+    const query = req.body.cityName;
+    const apiKey = "807340b847e45b1f0394804aac572866";
     const url =
       "https://api.openweathermap.org/data/2.5/weather?appid=" +
       apiKey +
       "&units=metric&q=" +
       query;
     https.get(url, function (response) {
-      console.log(response.statusCode);
-
       response.on("data", function (data) {
         const weatherData = JSON.parse(data);
         const temp = weatherData.main.temp;
@@ -29,7 +27,11 @@ app.get("/", function (req, res) {
 
         res.write("<p>The weather is currently " + weatherDescription + "</p>");
         res.write(
-          "<h1>The temperature in " + query + " is "  + temp + " degree celsius</h1>"
+          "<h1>The temperature in " +
+            query +
+            " is " +
+            temp +
+            " degree celsius</h1>"
         );
         res.send();
       });

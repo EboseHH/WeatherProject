@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body class="p-4 text-center bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div>
+      <h1 class="text-3xl my-6">Weather report</h1>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 lg:px-60 px-12">
+      <% cities.forEach(function(city){%>
+      <div class="bg-white/50 py-10">
+        <h2 class="text-2xl"><%= city.name %></h2>
+        <p class="my-2"><%= city.temperature %> °C</p>
+        <div class="w-24 mx-auto p-4 rounded-full bg-sky-400">
+          <img
+            src="https://openweathermap.org/img/wn/<%= city.icon %>@4x.png"
+          />
+        </div>
+        <p class="my-2"><%= city.description %></p>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
